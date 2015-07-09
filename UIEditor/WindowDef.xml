@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowDef>
+  <Property name="Name" showname="窗口名称，窗口唯一性标识，英文描述" type="String" value=""/>
+  <Property name="X" showname="位置，窗口的左上角X坐标，取值为统一坐标格式" type="Integer" value=""/>
+  <Property name="Y" showname="位置，窗口的左上角Y坐标，取值为统一坐标格式" type="Integer" value=""/>
+  <Property name="Z" showname="层次" type="Integer" value="1" />
+  <Property name="ZTouch" showname="touch优先级" type="Integer" value="128" />
+  <Property name="Width" showname="大小，窗口的宽，取值为统一坐标格式" type="Integer" value=""/>
+  <Property name="Height" showname="大小，窗口的高，取值为统一坐标格式" type="Integer" value=""/>
+  <Property name="Visible" showname="可见" type="Bool" choice="True|False" value="True"/>
+  <Property name="NeedCache" showname="是否需要缓存，只对根窗口生效" type="Bool" choice="False|True" value="False"/>
+  <Property name="PlayEffect" showname="是否播放窗口特效，只对根窗口生效" type="Bool" choice="True|False" value="True"/>
+  <Property name="ClickEffect" showname="是否播放点击特效" type="Bool" choice="True|False" value="True"/>
+  <Property name="HasGrayLayer" showname="是否有灰层" type="Bool" choice="False|True" value="False"/>
+  
+  <Window name="Text" showname="文本" defaultwidth="100" defaultheight="30" iscontainer="False">
+    <Property name="Template" showname="模板" type="TextTemplate" value="" />
+    <Property name="Text" showname="文本" type="String" value="输入文本" />
+    <Property name="HorzAlign" showname="水平对齐方式" type="Choice" choice="Center|Left|Right" value="Left" />
+    <Property name="VertAlign" showname="竖直对齐方式" type="Choice" choice="Center|Top|Bottom" value="Center" />
+    <Property name="FontSize" showname="字体大小" type="String" value="24" />
+    <Property name="FontColor" showname="字体颜色" type="Color" value="255,255,255,255" />
+    <Property name="HasBorder" showname="是否描边" type="Bool" choice="True|False" value="False"/>
+    <Property name="Wrapper" showname="是否折行" type="Bool" choice="True|False" value="False"/>
+    <Property name="Scroll" showname="超出是否滚动" type="Bool" choice="True|False" value="True" />
+    <Property name="ZBMFont" showname="是否是位图字体" type="Bool" choice="True|False" value="False" />
+    <Property name="ZBMFontName" showname="位图字体文件名" type="String"  value="number_1.fnt" />
+  </Window>
+
+  <Window name="VertText" showname="竖版文本" defaultwidth="100" defaultheight="30" iscontainer="False">
+    <Property name="Text" showname="文本" type="String" value="输入文本" />
+    <Property name="FontSize" showname="字体大小" type="String" value="24" />
+    <Property name="FontColor" showname="字体颜色" type="Color" value="255,255,255,255" />
+    <Property name="HasBorder" showname="是否描边" type="Bool" choice="True|False" value="False"/>
+    <Property name="Scroll" showname="超出是否滚动" type="Bool" choice="True|False" value="True" />
+  </Window>
+
+  <Window name="MagicWindow"  showname="万能窗口" defaultwidth="200" defaultheight="200" iscontainer="True">
+    <Property name="Text" showname="文本" type="String" value="输入文本" />
+    <Property name="Template" showname="模板" type="MagicWindowTemplate" value="" />
+    <Property name="AdaptTemplate" showname="宽高适应模板" type="Bool" choice="False|True" value="False"/>
+	<Property name="TouchArea" showname="按钮的touch区域" type="String"  value="1"/>
+  </Window>
+
+  <Window name="Image"  showname="图片" defaultwidth="100" defaultheight="100" iscontainer="True">
+    <Property name="Image" showname="图片" type="Image" value="" />
+    <Property name="SelectImage" showname="图片" type="Image" value="" />
+    <Property name="imageWidth" showname="1/2 图片宽度" type="Integer" value="0" />
+    <Property name="imageHeight" showname="1/2  图片高度" type="Integer" value="0" />
+    <Property name="CutChildren" showname="是否裁剪子窗口" type="Bool" choice="True|False" value="False"/>
+	<Property name="TouchArea" showname="按钮的touch区域" type="String"  value="1"/>
+  </Window>
+
+  <Window name="EditBox"  showname="编辑框" defaultwidth="100" defaultheight="50" iscontainer="False">
+    <Property name="Image" showname="图片(9刀框)" type="Image" value="" />
+    <Property name="Color" showname="字体颜色" type="Color" value="255,255,255,255" />
+    <Property name="MaxLength" showname="限制字数" type="Integer" value="20" />
+    <Property name="PlaceHolder" showname="占位文字" type="String" value="" />
+    <Property name="InputMode" showname="输入类型选择" type="Choice" choice="Any|Email|Numeric|PhoneNumber|Url|Decimal|SingleLine" value="Any" />
+    <Property name="InputFlag" showname="屏蔽类型选择" type="Choice" choice="Sensitive|CapsAllCharacters|CapsSentence|CapsWord|Password" value="Sensitive" />
+    <Property name="MultiLine" showname="多行" type="Bool" choice="False|True" value="False"/>
+    <Property name="FontSize" showname="字体大小" type="Integer"  value="24"/>
+  </Window>
+
+  <Window name="Progress" showname="进度条" defaultwidth="100" defaultheight="50" iscontainer="False">
+    <Property name="FrontImage" showname="前景图片" type="Image" value="" />
+    <Property name="BkImage" showname="背景图片" type="Image" value="" />
+    <Property name="HorzPadding" showname="水平Padding" type="String" value="" />
+    <Property name="VertPadding" showname="垂直Padding" type="String" value="" />
+  </Window>
+  
+  <Window name="MagicBox"  showname="万能箱子" defaultwidth="400" defaultheight="200" iscontainer="True">
+    <Property name="ScrollBar" showname="滚动条" type="Choice" choice="Vert|Horz" value="Vert" />
+    <Property name="ScrollUp" showname="滚动条向上按钮" type="Image" value="" />
+    <Property name="ScrollDown" showname="滚动条向下按钮" type="Image" value="" />
+    <Property name="ScrollMiddle" showname="滚动条背景" type="Image" value="" />
+    <Property name="Span" showname="内容跨度" type="Integer" value="5" />
+    <Property name="PageTurn" showname="翻页效果类型" type="Choice" choice="None|Cell|Page" value="None" />
+    <Property name="PageTurnSpeed" showname="翻页速度(一秒钟多少像素)" type="Integer" value="300" />
+    <Property name="PageTrunIgnore" showname="移动不超过此范围不翻页" type="Integer" value="5" />
+  </Window>
+
+  <Window name="ScrollView"  showname="滚动视图" defaultwidth="400" defaultheight="200" iscontainer="True">
+    <Property name="Align" showname="滚动方式" type="Choice" choice="Vert|Horz|Both" value="Vert" />
+    <Property name="ContentWidth" showname="内容宽度" type="Integer" value="400" />
+    <Property name="ContentHeight" showname="内容高度" type="Integer" value="200" />
+    <Property name="IsBounce" showname="是否回弹" type="Choice" choice="True|False" value="True" />
+  </Window>
+
+  <Window name="RichText"  showname="富文本控件" defaultwidth="400" defaultheight="200" iscontainer="True">
+    <Property name="Font" showname="字体" type="Choice" choice="Font1|Font2" value="Font1"/>
+    <Property name="LineSpan" showname="行间隔" type="Integer" value="5" />
+    <Property name="NotFullCanSlide" showname="内容没满的时候是否可以滑动" type="Choice" choice="True|False" value="True" />
+    <Property name="MaxLine" showname="最大行数" type="Integer" value="50" />
+    <Property name="MaxColumn" showname="最大列数" type="Integer" value="50" />
+  </Window>
+  
+</WindowDef>
